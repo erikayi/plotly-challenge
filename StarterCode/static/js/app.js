@@ -37,23 +37,55 @@ function buildPlot(BellyButtonData) {
     var otu_label = top10otu_ids.map(label => "OTU " + label);
     console.log(`OTU IDs: ${otu_label}`);
 
+    // get top 10 labels for each values of OTUs
+    var labels = oneSample.otu_labels.slice(0, 10);
+    console.log(labels);
+
     // put in the bar chart
     var OTU_barChart = [{
         type: 'bar',
         x: top10values,
         y: otu_label,
+        text: labels,
         orientation: 'h'
       }];
       
       Plotly.newPlot('bar', OTU_barChart);
 
+    // make a bubble chart of each sample
+    var trace1 = {
+        x: oneSample.otu_ids,
+        y: oneSample.sample_values,
+        text: oneSample.otu_labels,
+        mode: 'markers',
+        marker: {
+          color: oneSample.otu_ids,
+          size: oneSample.sample_values,
+          sizemode: 'area'
+        }
+      };
+      
+      var data = [trace1];
+      
+      var layout = {
+        title: 'Sample Values vs. Each OTU IDs',
+        xaxis: {title: "OTU ID"},
+        showlegend: false
+      };
+      
+      Plotly.newPlot('bubble', data, layout);
 
-
-    
-
+      // create gauge chart for washing frequency of the individual 
 
 });
 
 };
+
+
+// Display the sample metadata, for example, an individual's demographic info
+
+// Display each key-value pair from the metadata JSON object on the page
+
+// Update all of the plots any time that new sample is selected
 
 buildPlot();
