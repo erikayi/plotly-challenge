@@ -11,6 +11,11 @@ function buildPlot(BellyButtonData) {
     var bbtype = data.metadata.map(bb => bb.bbtype);
     console.log(`Belly Button Types: ${bbtype}`);
 
+    var washingfreq = data.metadata.map(wf => wf.wfreq);
+    console.log(`Washing Frequency: ${washingfreq}`);
+
+    var label = data.metadata.map(race => race.ethnicity);
+
     // Filter by ids
     var sample_values = data.samples.filter(sampleid => sampleid.id);
     console.log(sample_values);
@@ -77,41 +82,47 @@ function buildPlot(BellyButtonData) {
 
       // create gauge chart for washing frequency of the individual 
 
-      var washingfreq = data.metadata.map(wf => wf.wfreq);
-      console.log(`Washing Frequency: ${washingfreq}`);
-
       var washingdata = [
-        {
-          domain: { x: [0, 1], y: [0, 1] },
-          value: washingfreq,
-          title: { text: "Belly Button Washing Frequency" },
-          subtitle: { text: "Scrubs per Week"},
+        { domain: { x: [0, 1], y: [0, 1] },
+          value: parseFloat(washingfreq),
+          title: { text: "Belly Button Washing Frequency"},
           type: "indicator",
-          mode: "gauge+number+delta",
-          delta: { reference: washingfreq },
+          mode: "gauge+number",
+          // delta: { reference: parseFloat(washingfreq) },
+          hoverinfo: "labels",
           gauge: {
-            axis: { range: [null, 10] },
+            axis: { range: [null, 9] },
             steps: [
-              { range: [0, 1], color: "lightbeige" },
-              { range: [1, 2], color: "beige" },
-              { range: [2, 3], color: "lightyellow" },
-              { range: [3, 4], color: "lightgreenyellow" },
-              { range: [4, 5], color: "lightgreen" },
-              { range: [5, 6], color: "green" },
-              { range: [6, 7], color: "lightbluegreen" },
-              { range: [7, 8], color: "bluegreen" },
-              { range: [8, 9], color: "blue"}
+              { range: [0, 1], color: "beige" },
+              { range: [1, 2], color: "azure" },
+              { range: [2, 3], color: "lightcyan" },
+              { range: [3, 4], color: "powderblue" },
+              { range: [4, 5], color: "lightblue" },
+              { range: [5, 6], color: "lightskyblue" },
+              { range: [6, 7], color: "lightsteelblue" },
+              { range: [7, 8], color: "thistle"},
+              { range: [8, 9], color: "plum"}
             ],
             threshold: {
-              line: { color: "red", width: 4 },
-              thickness: 0.75,
+              line: { color: "red", width: 5 },
+              thickness: 1,
               value: washingfreq
             }
           }
         }
-      ];
+        ];
       
-      var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+      var layout = { 
+        width: 600, 
+        height: 450, 
+        margin: { t: 0, b: 0 },
+        "annotations": [
+          {
+            "text": "Scrubs per Week"
+          },
+        ]
+      };
+
       Plotly.newPlot('gauge', washingdata, layout);
 
 });
@@ -120,6 +131,8 @@ function buildPlot(BellyButtonData) {
 
 
 // Display the sample metadata, for example, an individual's demographic info
+
+
 
 // Display each key-value pair from the metadata JSON object on the page
 
