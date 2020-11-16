@@ -1,5 +1,5 @@
 
-function buildPlot(BellyData) {
+function buildPlot(BellyButtonData) {
 
     // Fetch the JSON data and console log it
     d3.json("../../samples.json").then(function(data) {
@@ -47,7 +47,7 @@ function buildPlot(BellyData) {
       
       Plotly.newPlot('bar', OTU_barChart);
 
-      
+
 
     
 
