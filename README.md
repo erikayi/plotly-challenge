@@ -21,7 +21,7 @@ Compare OTUs on all of samples in the bubble chart.
 
 ![Bubble Chart](Images/bubble-chart.png)
 
-Compare Washing Frequency (how many times an individual sample washed per week). Some of samples have none or less than 7 washes per week, which it made me feel really grossed out. Also, some of samples have null, which we could take an estimated guess that a sample did not provided washes per week.
+Compare Washing Frequency (how many times an individual sample washed per week). Some of samples have none or less than 7 washes per week, which it means that most of people in this data don't wash their belly button frequently. Also, some of samples have null, which we could take an estimated guess that a sample did not provided washes per week.
 
 ![Gauge Chart](Images/gauge-chart.png)
 
