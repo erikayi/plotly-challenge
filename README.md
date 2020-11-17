@@ -8,8 +8,8 @@ This dataset shows that a small handful of microbial species (a.k.a. operational
 
 ## Screenshots Of The Whole Project Layout
 
-![Whole Page](Images/screenshot1.png)
-![Whole Page](Images/screenshot2.png)
+![Whole Page](Images/first_screenshot.png)
+![Whole Page](Images/second_screenshot.png)
 
 ## Creating Data Visualization using Plotly
 
