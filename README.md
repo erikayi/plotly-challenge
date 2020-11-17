@@ -1,79 +1,32 @@
-# Plot.ly Homework - Belly Button Biodiversity
+# Plotly Challenge Work - about Belly Button Biodiversity
 
-![Bacteria by filterforge.com](Images/bacteria.jpg)
+![Bacteria by https://www.nationalgeographic.org/encyclopedia/bacteria/](Images/bacteria.jpg)
 
-In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
+For this project, we are building an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which gathers the microbes that colonize human navels.
 
-The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
+This dataset shows that a small handful of microbial species (a.k.a. operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
-## Step 1: Plotly
+![Whole Page](Images/screenshot1.png)
+![Whole Page](Images/screenshot2.png)
 
-1. Use the D3 library to read in `samples.json`.
+## Creating Data Visualization using Plotly
 
-2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+Compare OTUs of the individual sample.
 
-* Use `sample_values` as the values for the bar chart.
+![bar Chart](Images/h-bar-chart.png)
 
-* Use `otu_ids` as the labels for the bar chart.
+Compare OTUs on all of samples in the bubble chart.
 
-* Use `otu_labels` as the hovertext for the chart.
+![Bubble Chart](Images/bubble-chart.png)
 
-  ![bar Chart](Images/hw01.png)
+Compare Washing Frequency (how many times an individual sample washed per week). Some of samples have none or less than 7 washes per week, which it made me feel really grossed out. Also, some of samples have null, which we could take an estimated guess that a sample did not provided washes per week.
 
-3. Create a bubble chart that displays each sample.
+![Gauge Chart](Images/gauge-chart.png)
 
-* Use `otu_ids` for the x values.
-
-* Use `sample_values` for the y values.
-
-* Use `sample_values` for the marker size.
-
-* Use `otu_ids` for the marker colors.
-
-* Use `otu_labels` for the text values.
-
-![Bubble Chart](Images/bubble_chart.png)
-
-4. Display the sample metadata, i.e., an individual's demographic information.
-
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
-
-![hw](Images/hw03.png)
-
-6. Update all of the plots any time that a new sample is selected.
-
-Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
-
-![hw](Images/hw02.png)
-
-## Advanced Challenge Assignment (Optional)
-
-The following task is advanced and therefore optional.
-
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
-
-![Weekly Washing Frequency Gauge](Images/gauge.png)
-
-## Deployment
-
-* Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
-## Hints
-
-* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
-
-* Refer to the [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
-
-### About the Data
+### Sources Used For The Data:
 
 Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 
-- - -
+//
 
-© 2019 Trilogy Education Services
+© 2020 Erika 

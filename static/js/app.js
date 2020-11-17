@@ -2,7 +2,7 @@
 function buildPlot(BellyButtonData) {
 
   // Fetch the JSON data and console log it
-  d3.json("../../samples.json").then(function (data) {
+  d3.json("../../data/samples.json").then(function (data) {
     console.log(data);
 
     var ethnicity = data.metadata.map(race => race.ethnicity);
@@ -139,7 +139,7 @@ function buildPlot(BellyButtonData) {
 function updatePlotly(BellyButtonData) {
 
   // Fetch the JSON data and console log it
-  d3.json("../../samples.json").then((data) => {
+  d3.json("../../data/samples.json").then((data) => {
 
     console.log(data);
 
@@ -184,7 +184,7 @@ d3.selectAll("#selDataset").on("change", buildPlot, updatePlotly);
 function init() {
 
   // read json data 
-  d3.json("../../samples.json").then((data) => {
+  d3.json("../../data/samples.json").then((data) => {
     console.log(data);
 
   // Use D3 to select the dropdown menu
