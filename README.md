@@ -17,11 +17,11 @@ Compare OTUs of the individual sample.
 
 ![bar Chart](Images/h-bar-chart.png)
 
-Compare OTUs on all of samples in the bubble chart.
+Compare OTUs on all of the samples in the bubble chart.
 
 ![Bubble Chart](Images/bubble-chart.png)
 
-Compare Washing Frequency (how many times an individual sample washed per week). Some of samples have none or less than 7 washes per week, which it means that most of people in this data don't wash their belly button frequently. Also, some of samples have null, which we could take an estimated guess that a sample did not provided washes per week.
+Compare Washing Frequency (how many times an individual sample washed per week). Some of the samples have none or less than seven washes per week, which means that most people in this data don't wash their belly button frequently. Also, some of the samples have null values, which we could take an estimated guess that there could be some missing data. 
 
 ![Gauge Chart](Images/gauge-chart.png)
 
