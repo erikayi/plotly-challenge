@@ -6,6 +6,8 @@ For this project, we are building an interactive dashboard to explore the [Belly
 
 This dataset shows that a small handful of microbial species (a.k.a. operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
+## Screenshots Of The Whole Project Layout
+
 ![Whole Page](Images/screenshot1.png)
 ![Whole Page](Images/screenshot2.png)
 
