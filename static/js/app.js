@@ -10,9 +10,15 @@ function buildPlot(BellyButtonData) {
 
     var bbtype = data.metadata.map(bb => bb.bbtype);
     console.log(`Belly Button Types: ${bbtype}`);
+ 
+    // this will only returns the first value for every data 
+    // var washingfreq = data.metadata.map(wf => wf.wfreq);
+    // console.log(washingfreq);
 
-    var washingfreq = data.metadata.map(wf => wf.wfreq);
-    console.log(washingfreq);
+    let filteredMetaSample = data.metadata.filter(sampleName => sampleName.id == BellyButtonData)[0];
+    let new_washingfreq = parseInt(filteredMetaSample.wfreq);
+    console.log(filteredMetaSample);
+    console.log(new_washingfreq);
 
     var race = data.metadata.map(race => race.ethnicity);
     console.log(race);
@@ -22,7 +28,7 @@ function buildPlot(BellyButtonData) {
     var sample = data.samples.filter(sampleid => sampleid.id.toString() === BellyButtonData);
     console.log(sample);
 
-    // Select one of the samples from the array
+    // Select one of the samples from the arraysizemode: 'area'
     var oneSample = sample[0];
     console.log(oneSample);
 
@@ -68,7 +74,8 @@ function buildPlot(BellyButtonData) {
       marker: {
         color: oneSample.otu_ids,
         size: oneSample.sample_values,
-        sizemode: 'area'
+        sizemode: 'area',
+        sizemin: 8
       }
     };
 
@@ -77,6 +84,7 @@ function buildPlot(BellyButtonData) {
     var layout = {
       title: 'Sample Values vs. Each OTU IDs',
       xaxis: { title: "OTU ID" },
+      yaxis: { title: "Types Of Bacteria Per OTU ID"},
       showlegend: false
     };
 
@@ -88,11 +96,13 @@ function buildPlot(BellyButtonData) {
       {
         domain: { x: [0, 1], y: [0, 1] },
         // Note: documentation on parseFloat: https://www.w3schools.com/jsref/jsref_parsefloat.asp
-        value: parseFloat(washingfreq),
+        // Note: parseInt: https://www.w3schools.com/jsref/jsref_parseint.asp 
+        value: parseInt(new_washingfreq),
         title: { text: "Belly Button Washing Frequency" },
         type: "indicator",
-        mode: "gauge+number",
-        // delta: { reference: parseFloat(washingfreq) },
+        mode: "gauge+number+delta",
+        delta: { reference: 5, increasing: { color: 'green' } },
+        // delta: { reference: parseFloat(new_washingfreq) },
         hoverinfo: "labels",
         gauge: {
           axis: { range: [null, 9] },
@@ -108,9 +118,9 @@ function buildPlot(BellyButtonData) {
             { range: [8, 9], color: "plum" }
           ],
           threshold: {
-            line: { color: "green", width: 5 },
+            line: { color: "red", width: 3 },
             thickness: 1,
-            value: parseFloat(washingfreq)
+            value: parseInt(new_washingfreq)
           }
         }
       }
