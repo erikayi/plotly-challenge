@@ -9,6 +9,10 @@ body {
     font-style: normal;
 }
 
+h3, h5 {
+    font-size: 12px;
+}
+
 #title {
     width: 1200px;
     height: 250px;

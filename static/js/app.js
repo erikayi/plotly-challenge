@@ -107,15 +107,15 @@ function buildPlot(BellyButtonData) {
         gauge: {
           axis: { range: [null, 9] },
           steps: [
-            { range: [0, 1], color: "beige" },
-            { range: [1, 2], color: "azure" },
-            { range: [2, 3], color: "lightcyan" },
-            { range: [3, 4], color: "powderblue" },
-            { range: [4, 5], color: "lightblue" },
-            { range: [5, 6], color: "lightskyblue" },
-            { range: [6, 7], color: "lightsteelblue" },
-            { range: [7, 8], color: "thistle" },
-            { range: [8, 9], color: "plum" }
+            { range: [0, 1], color: "red" },
+            { range: [1, 2], color: "orange" },
+            { range: [2, 3], color: "yellow" },
+            { range: [3, 4], color: "beige" },
+            { range: [4, 5], color: "lightyellow" },
+            { range: [5, 6], color: "powderblue" },
+            { range: [6, 7], color: "lightskyblue" },
+            { range: [7, 8], color: "lightgreen" },
+            { range: [8, 9], color: "green" }
           ],
           threshold: {
             line: { color: "red", width: 3 },
