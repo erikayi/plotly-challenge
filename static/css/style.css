@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#title {
+    width: 1200px;
+    height: 250px;
+    background-color: skyblue;
+    color: white;
+}
